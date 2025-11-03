@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from "@angular/router";
+import { RouterOutlet, RouterLink, RouterLinkActive } from "@angular/router";
+import { materialComponents } from '../../../material/material-components';
+
 
 @Component({
   selector: 'app-home',
-  imports: [RouterOutlet],
+  imports: [materialComponents, RouterLink, RouterOutlet, RouterLinkActive],
   templateUrl: './home.html',
   styles: ``
 })
 export class Home {
-
+  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
 }

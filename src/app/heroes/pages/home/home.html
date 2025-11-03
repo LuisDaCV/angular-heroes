@@ -1,3 +1,37 @@
-<h1>HeroesApp</h1>
-<hr>
-<router-outlet/>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #sidenav mode="push" class="rounded-none!" autoFocus="false">
+        <mat-toolbar class="justify-center" color='primary'>
+            <span>Menu</span>
+        </mat-toolbar>
+        <mat-nav-list class="mx-2! space-y-1 text-center">
+            <a (click)="sidenav.toggle()" mat-list-item class=" rounded-none! " routerLink="./list" routerLinkActive="bg-gray-800!">
+                <mat-icon matListItemIcon>list</mat-icon>
+                <span matListItemTitle>List</span>
+            </a>
+
+            <a (click)="sidenav.toggle()" mat-list-item class="rounded-none! " routerLink="./search" routerLinkActive="bg-gray-800!">
+                <mat-icon matListItemIcon>search</mat-icon>
+                <span matListItemTitle>Search Heroe</span>
+            </a>
+
+            <a (click)="sidenav.toggle()" mat-list-item class="rounded-none! "  routerLink="./add" routerLinkActive="bg-gray-800!">
+                <mat-icon matListItemIcon>add</mat-icon>
+                <span matListItemTitle>Add Heroe</span>
+            </a>
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-toolbar class="justify-between">
+        <button (click)="sidenav.toggle()" mat-icon-button>
+            <mat-icon>menu</mat-icon>
+        </button>
+        <button matButton="elevated">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+        </button>
+    </mat-toolbar>
+    <div class="m-2.5">
+
+        <router-outlet />
+    </div>
+</mat-sidenav-container>
