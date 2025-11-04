@@ -1,0 +1,24 @@
+<mat-card class="w-[80%] xl:w-[10%] lg:w-[17%] md:w-[30%] sm:w-[40%]">
+    <mat-card-header class="mb-5">
+        <mat-card-title class="line-clamp-1!">{{heroe.superhero}}</mat-card-title>
+        <mat-card-subtitle class="line-clamp-1!">{{heroe.alter_ego}}</mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image [src]="heroe | imagen">
+
+    <mat-card-content class="mt-4">
+        <h3>{{heroe.publisher}}</h3>
+        <p><strong>First appearance: </strong>{{heroe.first_appearance}}</p>
+        <p class="line-clamp-2"><strong>Characters: </strong>{{heroe.characters}}</p>
+
+    </mat-card-content>
+    <mat-card-actions class="mt-auto py-2 justify-between  lg:mx-0">
+        <button
+        [routerLink]="['/heroes/', heroe.id]"
+        matButton="filled">See more...</button>
+        <button
+        [routerLink]="['/heroes/edit/',heroe.id]"
+        matButton="elevated">Edit</button>
+    </mat-card-actions>
+
+</mat-card>

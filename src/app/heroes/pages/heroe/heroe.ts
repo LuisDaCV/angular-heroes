@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-heroe',
@@ -6,6 +7,16 @@ import { Component } from '@angular/core';
   templateUrl: './heroe.html',
   styles: ``
 })
-export class Heroe {
+export class Heroe implements OnInit {
+
+  route = inject(ActivatedRoute);
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      console.log(id)
+    })
+    
+  }
 
 }
